@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://d-design.local/schemas/extreme-identification-v1.json",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "schemaVersion",
+    "status",
+    "scope",
+    "canvas",
+    "content",
+    "qr",
+    "brand",
+    "layouts",
+    "sources",
+    "typography",
+    "optionalStructures",
+    "delivery"
+  ],
+  "properties": {
+    "id": {
+      "const": "d-design-extreme-identification"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "canvas": {
+      "type": "object",
+      "required": [
+        "units",
+        "profiles",
+        "ratioEpsilon"
+      ],
+      "properties": {
+        "ratioEpsilon": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1e-06
+        },
+        "profiles": {
+          "type": "object",
+          "required": [
+            "landscape",
+            "portrait"
+          ],
+          "properties": {
+            "landscape": {
+              "type": "object",
+              "required": [
+                "widthToHeight",
+                "logoHeightShortEdgeFactor"
+              ],
+              "properties": {
+                "widthToHeight": {
+                  "const": 6
+                },
+                "logoHeightShortEdgeFactor": {
+                  "const": 0.14285714285714285
+                }
+              }
+            },
+            "portrait": {
+              "type": "object",
+              "required": [
+                "widthToHeight",
+                "logoHeightShortEdgeFactor"
+              ],
+              "properties": {
+                "widthToHeight": {
+                  "const": 0.16666666666666666
+                },
+                "logoHeightShortEdgeFactor": {
+                  "const": 0.125
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "headline",
+        "subtitle"
+      ],
+      "properties": {
+        "headline": {
+          "type": "object",
+          "required": [
+            "required",
+            "maxGraphemes"
+          ],
+          "properties": {
+            "required": {
+              "const": true
+            },
+            "maxGraphemes": {
+              "const": 10
+            }
+          }
+        },
+        "subtitle": {
+          "type": "object",
+          "required": [
+            "maxGraphemes"
+          ],
+          "properties": {
+            "maxGraphemes": {
+              "const": 16
+            }
+          }
+        }
+      }
+    },
+    "qr": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "reserveSpace",
+        "createPlaceholder",
+        "renderCaption",
+        "inheritOrdinaryPositionLinkage"
+      ],
+      "properties": {
+        "enabled": {
+          "const": false
+        },
+        "reserveSpace": {
+          "const": false
+        },
+        "createPlaceholder": {
+          "const": false
+        },
+        "renderCaption": {
+          "const": false
+        },
+        "inheritOrdinaryPositionLinkage": {
+          "const": false
+        }
+      }
+    },
+    "layouts": {
+      "type": "object",
+      "required": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    }
+  },
+  "$comment": "Runtime performs additional semantic validation and resolves common-component inheritance."
+}

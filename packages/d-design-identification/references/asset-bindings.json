@@ -1,0 +1,195 @@
+{
+  "id": "d-design-extreme-asset-bindings",
+  "version": "1.0.0",
+  "binaryAssetsIncluded": false,
+  "resolution": "Resolve by asset_id in the team asset library; package includes metadata only.",
+  "assets": [
+    {
+      "asset_id": "didi.chuxing.logo.horizontal.reverse",
+      "version": "1.0.0",
+      "type": "logo",
+      "file": "assets/brand/assets/logos/didi-logo.png",
+      "sha256": "5f2f413ff85ba46550baae02571dd29ad4a7d3d8fba90e1d4d304d00c8ba09bc",
+      "publication_status": "draft",
+      "brand_conformance_review": "not_performed",
+      "metadata": {
+        "canvas_px": {
+          "width": 7087,
+          "height": 3544
+        },
+        "color_mode": "RGBA",
+        "has_transparent_pixels": true,
+        "alpha_threshold": 0,
+        "visible_bounds_px": {
+          "left": 651,
+          "top": 1206,
+          "right": 6436,
+          "bottom": 2338
+        },
+        "bounds_convention": "top-left origin; left/top inclusive, right/bottom exclusive",
+        "visible_size_px": {
+          "width": 5785,
+          "height": 1132
+        },
+        "visible_aspect_ratio": 5.110424028268551,
+        "source_canvas_aspect_ratio": 1.9997178329571106,
+        "normalized_content_rect": [
+          0.09185833215747143,
+          0.34029345372460496,
+          0.8162833356850572,
+          0.3194130925507901
+        ],
+        "foreground_mean_rgb": [
+          255,
+          255,
+          255
+        ],
+        "observed_color_variant": "reverse_white",
+        "background_note": "反白素材；建议用于深色或经对比检查的图片背景。当前包未生成其他配色版本。",
+        "geometry_note": "原文件未裁切。布局时可依据 visible_bounds 定位；透明留白不等同于已经确认的品牌安全区。",
+        "format_note": "PNG 位图原件；未伪装成矢量文件。"
+      }
+    },
+    {
+      "asset_id": "didi.chuxing.slogan.single-line.reverse",
+      "version": "1.0.0",
+      "type": "slogan",
+      "file": "assets/brand/assets/slogans/slogan-landscape.png",
+      "sha256": "8bba04bed000d2cd4f5c20643374dc876162ca8afa858dad114bee431c605df2",
+      "publication_status": "draft",
+      "brand_conformance_review": "not_performed",
+      "metadata": {
+        "canvas_px": {
+          "width": 1520,
+          "height": 291
+        },
+        "color_mode": "RGBA",
+        "has_transparent_pixels": true,
+        "alpha_threshold": 0,
+        "visible_bounds_px": {
+          "left": 0,
+          "top": 0,
+          "right": 1520,
+          "bottom": 291
+        },
+        "bounds_convention": "top-left origin; left/top inclusive, right/bottom exclusive",
+        "visible_size_px": {
+          "width": 1520,
+          "height": 291
+        },
+        "visible_aspect_ratio": 5.223367697594502,
+        "source_canvas_aspect_ratio": 5.223367697594502,
+        "normalized_content_rect": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "foreground_mean_rgb": [
+          255,
+          255,
+          255
+        ],
+        "observed_color_variant": "reverse_white",
+        "background_note": "反白素材；建议用于深色或经对比检查的图片背景。当前包未生成其他配色版本。",
+        "geometry_note": "原文件未裁切。布局时可依据 visible_bounds 定位；透明留白不等同于已经确认的品牌安全区。",
+        "format_note": "PNG 位图原件；未伪装成矢量文件。"
+      }
+    },
+    {
+      "asset_id": "didi.font.hyqihei.50s",
+      "version": "1.0.0",
+      "type": "font",
+      "file": "assets/brand/assets/fonts/HYQiHei-50S.otf",
+      "sha256": "ddbc12b6a1acba5f887fa16d8a8d27ebb5083b5cbe1159e95b2d1be50041ad89",
+      "publication_status": "draft",
+      "brand_conformance_review": "not_performed",
+      "metadata": {
+        "family_names": [
+          "HYQiHei-50S",
+          "汉仪旗黑-50S"
+        ],
+        "subfamily": "Light",
+        "full_name": "HYQiHei-50S Light",
+        "postscript_name": "HYQiHei-EZS",
+        "sfnt_weight_class": 400,
+        "units_per_em": 1000,
+        "ascender_units": 916,
+        "descender_units": -301,
+        "line_gap_units": 0,
+        "glyph_count": 28777,
+        "free_type_loadable": true,
+        "sample_coverage": {
+          "sample": "城市运营 活动海报 上海 北京 杭州 和这座城一起出发 活动时间 地点 扫码了解详情 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz ，。！？：；（）×—%",
+          "tested_unique_characters": 103,
+          "missing_characters": [],
+          "scope": "仅验证本样本，不代表完整 Unicode 覆盖；运行时仍应检查用户输入字形。"
+        },
+        "sample_text_measurement": {
+          "text": "和这座城一起出发",
+          "font_size_px": 44,
+          "advance_width_px": 352,
+          "bbox_px": [
+            0,
+            5,
+            352,
+            46
+          ]
+        },
+        "css_family": "DiDi-HYQiHei-50S",
+        "web_font_face_weight": 400,
+        "registration_note": "此文件以独立 family 注册；50S/65S/70S 通过选择文件区分，不通过伪加粗或 font-weight 推断。"
+      }
+    },
+    {
+      "asset_id": "didi.font.hyqihei.65s",
+      "version": "1.0.0",
+      "type": "font",
+      "file": "assets/brand/assets/fonts/HYQiHei-65S.otf",
+      "sha256": "25293fe4410b065b84f36181af7acc551f7ce503fa58275233ee754b6e7ea9a2",
+      "publication_status": "draft",
+      "brand_conformance_review": "not_performed",
+      "metadata": {
+        "family_names": [
+          "HYQiHei-65S",
+          "汉仪旗黑-65S"
+        ],
+        "subfamily": "Medium",
+        "full_name": "HYQiHei-65S Medium",
+        "postscript_name": "HYQiHei-FES",
+        "sfnt_weight_class": 400,
+        "units_per_em": 1000,
+        "ascender_units": 916,
+        "descender_units": -301,
+        "line_gap_units": 0,
+        "glyph_count": 28777,
+        "free_type_loadable": true,
+        "sample_coverage": {
+          "sample": "城市运营 活动海报 上海 北京 杭州 和这座城一起出发 活动时间 地点 扫码了解详情 0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz ，。！？：；（）×—%",
+          "tested_unique_characters": 103,
+          "missing_characters": [],
+          "scope": "仅验证本样本，不代表完整 Unicode 覆盖；运行时仍应检查用户输入字形。"
+        },
+        "sample_text_measurement": {
+          "text": "和这座城一起出发",
+          "font_size_px": 44,
+          "advance_width_px": 352,
+          "bbox_px": [
+            0,
+            5,
+            352,
+            47
+          ]
+        },
+        "css_family": "DiDi-HYQiHei-65S",
+        "web_font_face_weight": 400,
+        "registration_note": "此文件以独立 family 注册；50S/65S/70S 通过选择文件区分，不通过伪加粗或 font-weight 推断。"
+      }
+    }
+  ],
+  "missing": [
+    "approved joint-logo separator asset",
+    "partner-brand assets when partners are selected",
+    "approved special logo-slogan lockup assets if those forms are enabled"
+  ]
+}

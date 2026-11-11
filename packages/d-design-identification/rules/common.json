@@ -1,0 +1,137 @@
+{
+  "id": "d-design-common-identification",
+  "version": "1.0.0",
+  "status": "shared-geometry-with-candidate-typography",
+  "marginInBrandUnits": 1,
+  "marginSource": "spec-A5-1",
+  "logoAssetId": "didi.chuxing.logo.horizontal.reverse",
+  "sloganAssetId": "didi.chuxing.slogan.single-line.reverse",
+  "minSloganHeightInBrandUnits": 1,
+  "defaultSloganHeightInBrandUnits": 1,
+  "sloganHeightSource": "spec-A5-24",
+  "sloganBoundsConvention": "whole visible slogan including its standard short underline",
+  "sloganBoundsStatus": "needs-visual-confirmation",
+  "typography": {
+    "status": "candidate-not-brand-approved",
+    "referenceShortEdge": 2126,
+    "headline": {
+      "assetId": "didi.font.hyqihei.65s",
+      "referenceEm": 200,
+      "lineAdvanceEm": 1.2,
+      "trackingEm": 0
+    },
+    "subtitle": {
+      "assetId": "didi.font.hyqihei.50s",
+      "referenceEm": 100,
+      "lineAdvanceEm": 1.3,
+      "trackingEm": 0
+    },
+    "referenceTitleSubtitleGap": 112,
+    "fontProportions": "preserve",
+    "autoShrinkOnCopyChange": false,
+    "source": "regular v0.4.2 and extreme v1.0.0 agreed candidate baseline; not a new PDF approval"
+  },
+  "jointBrand": {
+    "primary_brand": "didi",
+    "partner_counts": [
+      0,
+      1,
+      2
+    ],
+    "source": "spec-joint",
+    "orientation": "single-horizontal-row",
+    "partner_order": "as-confirmed-by-user",
+    "partner_height_H_range": [
+      0.8,
+      1.2
+    ],
+    "default_partner_height_H_candidate": 1,
+    "height_over_1_2": "requires-brand-review;cannot-auto-approve",
+    "separator_width_H": 0.55,
+    "gap_before_separator_H": 0.5,
+    "gap_after_separator_H": 0.5,
+    "separator_stroke_width": null,
+    "separator_asset": "approved-asset-required",
+    "vertical_alignment_candidate": "visible-bounds-center",
+    "group_width": "didi_width+sum(1.55*H+partner_width)",
+    "group_bounds": "union of all visible child bounds",
+    "group_anchor": "inherits standard brand anchor",
+    "preserve_aspect": true,
+    "overflow": "block;no-squeezing-or-gap-reduction"
+  },
+  "imageTreatment": "original-no-dark-overlay",
+  "informationColor": {
+    "approvedValue": null,
+    "regularPreviewCandidate": "#FF6600",
+    "observedRasterValue": "#FF6400",
+    "status": "approved-color-remains-unresolved"
+  },
+  "textCounting": {
+    "normalization": "NFC",
+    "trim_outer_whitespace": true,
+    "exclude_linebreaks": true,
+    "inner_spaces_digits_latin_punctuation": "one grapheme each",
+    "source": "proposal-v04"
+  },
+  "semanticTitleLineBreak": {
+    "label": "AI 推荐语义断行，用户可以调整",
+    "source": "user-semantic-title-2026-11-11",
+    "field": "title",
+    "applies_to_defined_presets": [
+      "S",
+      "M",
+      "L"
+    ],
+    "manual_breaks": {
+      "priority": "first",
+      "preserve_when_valid": true,
+      "invalid_action": "show-specific-error;ask-user-to-adjust;do-not-silently-replace"
+    },
+    "automatic": {
+      "mode": "ai-recommended-semantic-candidates",
+      "when": "no-user-specified-line-breaks",
+      "preserve_copy": true,
+      "ranking": [
+        "phrase-completeness",
+        "readability",
+        "balanced-line-lengths"
+      ],
+      "avoid_splitting": [
+        "city-names",
+        "brand-names",
+        "complete-phrases",
+        "numeric-discount-expressions"
+      ],
+      "status": "requirement-only-not-implemented"
+    },
+    "user_controls": [
+      "accept-recommendation",
+      "edit-line-breaks",
+      "choose-another-valid-candidate"
+    ],
+    "layout_validation": {
+      "use_template_font_size": true,
+      "preserve_total_character_limit": true,
+      "respect_template_line_count": true,
+      "measure_actual_font_width": true,
+      "reject_overflow": true,
+      "reject_new_text_or_rewriting": true,
+      "auto_shrink": false
+    },
+    "no_valid_candidate": "suggest-shortening-copy-or-changing-approved-template;do-not-force-a-word-splitting-result-as-confirmed",
+    "downstream_changes": "line-break-change-invalidates-preview;recompute-text-box-height-and-following-QR-position;regenerate-and-recheck-before-review",
+    "example": {
+      "original": "杭州周末出行滴滴好礼相伴",
+      "recommended_lines": [
+        "杭州周末出行",
+        "滴滴好礼相伴"
+      ],
+      "kind": "manually-curated-rule-example;not-an-AI-service-response"
+    },
+    "implementation_status": "documented-not-connected-to-real-AI-or-site",
+    "current_checker_behavior": "width-based-geometric-proof-only;does-not-demonstrate-semantic-AI",
+    "detail_provenance": "Product behavior elaboration based on the user-confirmed statement; no new brand numeric constraints."
+  },
+  "semanticScope": "regular S/M/L only; not automatically enabled for extreme module",
+  "assets": "../references/asset-bindings.json"
+}

@@ -1,0 +1,359 @@
+{
+  "$schema": "../development/schemas/extreme-identification.schema.json",
+  "id": "d-design-extreme-identification",
+  "version": "1.0.1",
+  "schemaVersion": 1,
+  "updatedOn": "2026-11-11",
+  "status": "confirmed-core-with-candidate-typography",
+  "scope": {
+    "sloganRole": "identification",
+    "channel": "external-online-offline-communication",
+    "supportedOrientations": [
+      "landscape",
+      "portrait"
+    ],
+    "supportedPresets": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "enabledStructure": "brand-pillar",
+    "excluded": [
+      "primary-slogan",
+      "secondary-slogan",
+      "arbitrary-extreme-ratios",
+      "QR",
+      "automatic-special-lockup-assembly",
+      "production-print-verification"
+    ]
+  },
+  "sources": {
+    "user-fixed-ratio": {
+      "kind": "user-confirmed",
+      "date": "2026-11-11",
+      "statement": "本轮固定极长比例；横版宽高比6:1、竖版宽高比1:6。"
+    },
+    "user-copy-and-no-qr": {
+      "kind": "user-confirmed",
+      "date": "2026-11-11",
+      "statement": "极端尺寸主标题10字以内，副标题16字以内；都不需要二维码。"
+    },
+    "user-margin-inheritance": {
+      "kind": "user-confirmed",
+      "date": "2026-11-11",
+      "statement": "标识、口号距离画面边距与其他模板一样；没有源文件样稿。"
+    },
+    "spec-B4-2": {
+      "kind": "spec-explicit",
+      "section": "B.4.2",
+      "pdfPage": 243,
+      "evidence": "archive/evidence/extreme/B4-2-portrait-ratios.png"
+    },
+    "spec-B4-8": {
+      "kind": "spec-explicit",
+      "section": "B.4.8",
+      "pdfPage": 250,
+      "evidence": "archive/evidence/extreme/B4-8-landscape-ratios.png"
+    },
+    "spec-B4-4": {
+      "kind": "spec-explicit-and-diagram",
+      "section": "B.4.4",
+      "pdfPages": [
+        245,
+        246
+      ]
+    },
+    "spec-B4-11": {
+      "kind": "spec-explicit-and-diagram",
+      "section": "B.4.11",
+      "pdfPages": [
+        253,
+        254
+      ]
+    },
+    "proposal-v1": {
+      "kind": "implementation-proposal",
+      "statement": "字素计数口径、比例浮点容差、默认锚点、文本区计算、两行上限和字号缩放继承候选配置，不是PDF新增硬规范。"
+    },
+    "common-shared": {
+      "kind": "shared-component-master",
+      "file": "rules/common.json",
+      "version": "1.0.0",
+      "sha256": "325490f174b7cf72f3221e00c56ee6b18945ff015706cf601c3b069f89863aae",
+      "note": "Replaces v0.4.0 physical snapshot; extreme referenceTextWidth=1600 and 2-line candidate limits remain module overrides."
+    }
+  },
+  "precedence": {
+    "extremeOverrides": [
+      "headline-cap-10",
+      "subtitle-cap-16",
+      "QR-disabled",
+      "fixed-output-ratios",
+      "extreme-logo-size-reference"
+    ],
+    "inherited": [
+      "safe-margin",
+      "approved-assets-and-visible-bounds",
+      "joint-brand-spacing",
+      "font-files",
+      "original-image-treatment"
+    ],
+    "sourceConflict": "report conflict; do not silently turn a sample or a suggestion into a brand requirement"
+  },
+  "canvas": {
+    "units": [
+      "px",
+      "mm"
+    ],
+    "ratioEpsilon": 0.000001,
+    "ratioEpsilonSource": "proposal-v1; floating-point comparison only, not design tolerance",
+    "profiles": {
+      "landscape": {
+        "widthToHeight": 6,
+        "logoHeightShortEdgeFactor": 0.14285714285714285,
+        "logoHeightStatus": "spec-recommended",
+        "logoHeightSource": "spec-B4-8"
+      },
+      "portrait": {
+        "widthToHeight": 0.16666666666666666,
+        "logoHeightShortEdgeFactor": 0.125,
+        "logoHeightStatus": "spec-recommended",
+        "logoHeightSource": "spec-B4-2"
+      }
+    },
+    "unsupported": "reject; do not rotate, stretch or route unsupported extreme dimensions into ordinary fallback profiles"
+  },
+  "content": {
+    "headline": {
+      "required": true,
+      "maxGraphemes": 10,
+      "source": "user-copy-and-no-qr"
+    },
+    "subtitle": {
+      "required": false,
+      "maxGraphemes": 16,
+      "maxSource": "user-copy-and-no-qr",
+      "requiredSource": "inherited optional subtitle convention; no new mandatory subtitle requirement"
+    },
+    "counting": {
+      "normalize": "NFC",
+      "trimOuterWhitespace": true,
+      "excludeLineBreaks": true,
+      "internalSpacesDigitsLatinAndPunctuation": "one grapheme each",
+      "source": "proposal-v1"
+    }
+  },
+  "qr": {
+    "enabled": false,
+    "reserveSpace": false,
+    "createPlaceholder": false,
+    "renderCaption": false,
+    "inheritOrdinaryPositionLinkage": false,
+    "source": "user-copy-and-no-qr",
+    "explicitRequest": "reject with a precise message",
+    "legacyProjectUrl": "can remain project metadata; never forward it as QR markup"
+  },
+  "brand": {
+    "unit": "D = visible height of the DiDi smile emblem; canvas height is C, not D",
+    "geometryBasis": "visible bounds, not transparent PNG canvas",
+    "margin": {
+      "mode": "inherit",
+      "from": "common.marginInBrandUnits",
+      "formula": "m = common.marginInBrandUnits * D",
+      "source": "user-margin-inheritance"
+    },
+    "logoHeight": {
+      "default": "canvas profile recommendation",
+      "override": "requires an explicit approved profile; cannot auto-shrink on copy or joint-logo overflow"
+    },
+    "slogan": {
+      "role": "identification",
+      "minHeightInBrandUnits": 1,
+      "defaultHeightInBrandUnits": 1,
+      "assetOnly": true,
+      "preserveShortUnderline": true,
+      "heightBasisStatus": "Current binding uses entire visible asset including short underline; text-only height remains a review item."
+    },
+    "variants": {
+      "landscape": [
+        "horizontal",
+        "vertical"
+      ],
+      "portrait": [
+        "logo-top",
+        "logo-bottom"
+      ]
+    },
+    "defaultVariant": {
+      "landscape": "horizontal",
+      "portrait": "logo-bottom"
+    },
+    "variantSource": "special-format brand-pillar rules; exact defaults are implementation proposals",
+    "portraitAlignment": "same vertical center axis; swapping top and bottom is permitted",
+    "landscapeAlignment": "same horizontal row, or same left vertical column",
+    "jointBrand": "inherit common.jointBrand; group bounds determine edge margins; D remains the DiDi emblem height",
+    "overflow": "block; do not distort, shrink below profile or reduce prescribed gaps"
+  },
+  "layouts": {
+    "S": {
+      "mode": "split",
+      "informationFraction": 0.3333333333333333,
+      "imageFraction": 0.6666666666666666,
+      "label": "画面优先"
+    },
+    "M": {
+      "mode": "split",
+      "informationFraction": 0.5,
+      "imageFraction": 0.5,
+      "label": "图文平衡"
+    },
+    "L": {
+      "mode": "split",
+      "informationFraction": 0.6666666666666666,
+      "imageFraction": 0.3333333333333333,
+      "label": "信息优先"
+    },
+    "XL": {
+      "mode": "overlay",
+      "informationFraction": null,
+      "imageFraction": 1,
+      "label": "全画面"
+    }
+  },
+  "placement": {
+    "landscapeInformation": [
+      "left",
+      "right"
+    ],
+    "portraitInformation": [
+      "top",
+      "bottom"
+    ],
+    "defaultInformation": {
+      "landscape": "left",
+      "portrait": "bottom"
+    },
+    "defaultSource": "inherited ordinary ordering; special-format examples prefer top information in portrait, so the UI must show and confirm this selection",
+    "swap": "preserve selected S/M/L fraction; never rotate or mirror text or brand assets"
+  },
+  "typography": {
+    "mode": "shared-candidate-components-with-extreme-overrides",
+    "status": "candidate-not-brand-approved",
+    "scale": "k=B/2126; t=min(k,T/1600); fontSize=referenceEm*t; lineAdvance=fontSize*lineAdvanceEm",
+    "definitions": {
+      "B": "short edge",
+      "T": "available safe text width after selected layout and brand reservations"
+    },
+    "recomputeOn": [
+      "canvas",
+      "preset",
+      "brand-variant",
+      "information-placement",
+      "joint-brand-assets"
+    ],
+    "notRecomputedOn": [
+      "copy-change"
+    ],
+    "textPosition": "safe information region minus brand protection bands; top aligned; exact appearance is a proposal",
+    "gap": "common.typography.referenceTitleSubtitleGap * k",
+    "emptySubtitle": "no subtitle box, no subtitle gap",
+    "overflow": "block-with-actionable-message",
+    "autoShrinkOnCopyChange": false,
+    "fauxBold": false,
+    "condense": false,
+    "measurement": "actual-font metrics required for a rendered-layout pass; estimates may only produce a preview candidate",
+    "referenceTextWidth": 1600,
+    "headlineMaxLines": 2,
+    "subtitleMaxLines": 2,
+    "semanticLineBreak": "not-enabled; requires a separate confirmed extension of regular policy"
+  },
+  "appearance": {
+    "imageTreatment": "original",
+    "blackOverlay": false,
+    "automaticDarkening": false,
+    "imageFit": "cover with focal point or caller-confirmed crop; preserve subject and aspect",
+    "insufficientImage": "request an alternative image/crop or manual handling; no unannounced AI extension",
+    "informationColor": "inherit approved brand palette; unresolved color remains a review item"
+  },
+  "optionalStructures": {
+    "independent-brand-zone": {
+      "status": "documented-not-enabled-in-runtime",
+      "orientationPlacements": {
+        "landscape": [
+          "left",
+          "right"
+        ],
+        "portrait": [
+          "top",
+          "bottom"
+        ]
+      },
+      "fixedSixToOne": {
+        "landscapeWidthFraction": 0.16666666666666666,
+        "portraitHeightFraction": 0.16666666666666666
+      },
+      "maxSeparateZones": 1,
+      "canCombineWithSML": "a brand identification zone is not the S/M/L information region; do not add or subtract it silently",
+      "source": [
+        "spec-B4-2",
+        "spec-B4-8"
+      ]
+    },
+    "special-lockup": {
+      "status": "requires-approved-complete-asset",
+      "assetId": null,
+      "assembleFromSeparateFiles": false,
+      "sourceSections": [
+        "PDF page 247 (footer A.4.5)",
+        "B.4.9",
+        "B.4.10"
+      ],
+      "scope": "special aspect formats only; not ordinary templates",
+      "preserve": "internal arrangement, separator, underline, colors and aspect; measure overall visible bounds for placement",
+      "protectionSpaceReference": {
+        "portrait": {
+          "factorD": 1.5,
+          "source": "PDF247 diagram; separate component, not ordinary brand pillar"
+        },
+        "landscape": {
+          "factorD": 1,
+          "source": "B.4.9 diagram"
+        }
+      },
+      "pending": "Approved complete assets, internal-spacing text/diagram consistency, and portrait 1.5D protection versus inherited 1D canvas margin."
+    }
+  },
+  "validation": {
+    "geometryTolerance": "0.000001 * short edge, numerical comparison only",
+    "fourWayMargin": true,
+    "collision": true,
+    "checkEveryMaterial": true,
+    "requireActualFontsForTextPass": true,
+    "statuses": [
+      "pass",
+      "fail",
+      "review",
+      "not-applicable"
+    ],
+    "noUnknownAsPass": true,
+    "genericFivePercentTolerance": false
+  },
+  "delivery": {
+    "previewAllowed": true,
+    "productionReady": false,
+    "pending": [
+      "typography and visual placement acceptance",
+      "asset color variants and use scope",
+      "approved information color",
+      "actual font layout and image crop checks"
+    ],
+    "websiteIntegration": "adapter and router must be deployed; uploading Markdown alone does not change the existing website"
+  },
+  "components_ref": "./common.json",
+  "asset_bindings_ref": "../references/asset-bindings.json",
+  "derived_from": {
+    "version": "1.0.0",
+    "business_rules_changed": false
+  }
+}

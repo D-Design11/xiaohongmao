@@ -1,0 +1,375 @@
+{
+  "id": "d-design-identification-components",
+  "version": "0.5.0",
+  "date": "2026-11-11",
+  "status": "reorganized-from-0.4.2-no-new-design-approval",
+  "scope": {
+    "slogan_role": "identification",
+    "detailed_typography": [
+      "M"
+    ],
+    "qr_position_logic": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "portrait_combinations": [
+      "V-A",
+      "V-B"
+    ],
+    "excluded": [
+      "primary-slogan",
+      "secondary-slogan",
+      "production-print-validation"
+    ],
+    "copy_limits": [
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  "sources": {
+    "user-2026-11-11": {
+      "kind": "user-confirmed",
+      "description": "初版需求与四种位置组合。初版M14/16字容量已由user-copy-limits-2026-11-11替换；二维码位置共用S/M/L/XL；联合标识。"
+    },
+    "user-followup": {
+      "kind": "user-confirmed",
+      "description": "竖版固定两种组合；二维码位置逻辑包含XL。"
+    },
+    "user-50S": {
+      "kind": "user-confirmed",
+      "description": "此前指定副标题使用50S字体，不是字号50。"
+    },
+    "spec-A5-1": {
+      "kind": "spec-explicit",
+      "pdf_pages": [
+        108,
+        109
+      ],
+      "description": "常见比例标识高度与至少1H的版心安全边距。"
+    },
+    "spec-A5-24": {
+      "kind": "spec-explicit-and-diagram",
+      "description": "识别口号的品牌柱对齐与最小高度；角落、二维码位置示意。"
+    },
+    "spec-joint": {
+      "kind": "spec-explicit",
+      "screenshots": [
+        "截屏2026-11-11 15.50.46.png",
+        "截屏2026-11-11 15.51.14.png"
+      ],
+      "description": "主要联合方为滴滴；0.5H间距、0.55H符号宽、合作方0.8-1.2H。"
+    },
+    "psd-pair": {
+      "kind": "psd-measured",
+      "file": "archive/evidence/regular/psd-measurements.json"
+    },
+    "proposal-v04": {
+      "kind": "proposal",
+      "description": "规范未给出的统一字号、字数计数口径、容量预留、组件尺寸及文字框起点。"
+    },
+    "denso-quiet-zone": {
+      "kind": "technical-reference",
+      "url": "https://www.qrcode.com/en/howto/code.html",
+      "description": "二维码四周4模块静区。"
+    },
+    "user-copy-limits-2026-11-11": {
+      "kind": "user-confirmed",
+      "description": "S主标题最多10字、M最多12字、L最多14字；三档副标题最多18字。用户补充确认：8/10/12字换行阈值仅用于副标题。"
+    },
+    "user-semantic-title-2026-11-11": {
+      "kind": "user-confirmed",
+      "description": "加入：AI 推荐语义断行，用户可以调整。用于主标题。"
+    }
+  },
+  "units": {
+    "canvas": "caller-provided px or mm",
+    "short_edge": "B=min(W,C)",
+    "base_scale": "k=B/2126",
+    "text_scale": "t=min(k,text_safe_width/1200)",
+    "text_capacity_reference_width": 1200,
+    "text_scale_source": "proposal-v04",
+    "text_scale_recomputed_on": [
+      "canvas-size",
+      "canvas-ratio",
+      "template"
+    ],
+    "text_scale_not_recomputed_on": [
+      "copy-change"
+    ],
+    "brand_unit": "H=visible smile-symbol height",
+    "pixel_to_point": "pt=px*72/output_DPI",
+    "text_capacity_calculation": "max(ceil(title_max(12)/candidate_title_lines(2))*title_em(200), subtitle_line_limit(10)*subtitle_em(100))=1200",
+    "text_capacity_note": "M预先为主标题12字/候选2行及副标题每行10字预留；按尺寸计算，不按当前文案临时缩字。字号参数仍为候选值。"
+  },
+  "brand": {
+    "profiles": [
+      {
+        "id": "landscape-a-series",
+        "orientation": "landscape",
+        "short_edge_denominator": 18,
+        "example_ratio": 1.4142857142857144,
+        "source": "spec-A5-1"
+      },
+      {
+        "id": "landscape-16-9",
+        "orientation": "landscape",
+        "short_edge_denominator": 16,
+        "example_ratio": 1.7777777777777777,
+        "source": "spec-A5-1"
+      },
+      {
+        "id": "portrait-a-series",
+        "orientation": "portrait",
+        "short_edge_denominator": 19,
+        "example_ratio": 0.7070707070707071,
+        "source": "spec-A5-1"
+      },
+      {
+        "id": "portrait-rollup",
+        "orientation": "portrait",
+        "short_edge_denominator": 14,
+        "example_ratio": 0.4444444444444444,
+        "source": "spec-A5-1"
+      },
+      {
+        "id": "portrait-9-16",
+        "orientation": "portrait",
+        "short_edge_denominator": 15,
+        "example_ratio": 0.5625,
+        "source": "spec-A5-1"
+      }
+    ],
+    "profile_selection": "explicit-approved-profile; no automatic nearest-ratio fallback",
+    "shared_components_ref": "./common.json"
+  },
+  "ratios": {
+    "S": {
+      "information_fraction": 0.3333333333333333,
+      "mode": "split"
+    },
+    "M": {
+      "information_fraction": 0.5,
+      "mode": "split"
+    },
+    "L": {
+      "information_fraction": 0.6666666666666666,
+      "mode": "split"
+    },
+    "XL": {
+      "information_fraction": null,
+      "mode": "overlay"
+    }
+  },
+  "M": {
+    "source": "user-2026-11-11",
+    "regions": {
+      "landscape": "information-left-50pct,image-right-50pct",
+      "portrait": "image-top-50pct,information-bottom-50pct"
+    },
+    "text": {
+      "title": {
+        "required": true,
+        "max_graphemes": 12,
+        "max_lines": 2,
+        "family_status": "horizontal-matches-PSD;portrait-replacement-proposal",
+        "source": "proposal-v04",
+        "copy_source": "user-copy-limits-2026-11-11",
+        "line_break_policy_ref": "./common.json#/semanticTitleLineBreak",
+        "component_ref": "./common.json#/typography/headline"
+      },
+      "subtitle": {
+        "max_graphemes": 18,
+        "max_lines_candidate": 2,
+        "prefer_single_line": true,
+        "required": false,
+        "family_source": "user-50S",
+        "size_source": "proposal-v04",
+        "copy_source": "user-copy-limits-2026-11-11",
+        "max_graphemes_per_line": 10,
+        "component_ref": "./common.json#/typography/subtitle"
+      },
+      "auto_shrink_on_copy_change": false,
+      "preserve_font_proportions": true,
+      "faux_bold": false,
+      "font_kerning": "font-default",
+      "gap_scale": "k",
+      "gap_source": "proposal-v04",
+      "landscape_top_reference": 663,
+      "portrait_split_to_title_reference": 189,
+      "position_scale": "k",
+      "position_source": "psd-derived-proposal",
+      "bounds_convention": "logical top, with renderer bearing compensation",
+      "overflow": "block-with-actionable-message"
+    }
+  },
+  "qr": {
+    "source": "user-2026-11-11",
+    "applies_to": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reference_square_side": 280,
+    "reference_short_edge": 2126,
+    "square_side_short_ratio": 0.1317027281279398,
+    "size_source": "proposal-v04",
+    "contains_quiet_zone": true,
+    "quiet_zone_modules_each_side": 4,
+    "quiet_zone_source": "denso-quiet-zone",
+    "rasterization": "integer module pitch, centered in fixed Q container; no interpolation",
+    "caption": {
+      "enabled_default_candidate": true,
+      "text": "扫码参与活动",
+      "max_lines": 1,
+      "reference_em": 33.333333333333336,
+      "reference_line_advance": 40,
+      "reference_gap": 18,
+      "scale": "k",
+      "align": "center",
+      "source": "proposal-v04"
+    },
+    "corner_anchor_bounds": "entire group including optional caption",
+    "real_payload_provided": false,
+    "scan_verified": false
+  },
+  "variants": [
+    {
+      "id": "H-A",
+      "orientation": "landscape",
+      "qr_side": "left",
+      "subtitle": "optional",
+      "qr_anchor": "bottom-left-safe",
+      "slogan_anchor": "top-right-safe",
+      "brand_anchor": "top-left-safe",
+      "source": "user-2026-11-11"
+    },
+    {
+      "id": "H-B",
+      "orientation": "landscape",
+      "qr_side": "right",
+      "subtitle": "optional",
+      "qr_anchor": "bottom-right-safe",
+      "slogan_anchor": "bottom-left-safe",
+      "brand_anchor": "top-left-safe",
+      "source": "user-2026-11-11"
+    },
+    {
+      "id": "V-A",
+      "orientation": "portrait",
+      "subtitle": "absent",
+      "qr_anchor": "below-title-left",
+      "slogan_anchor": "bottom-right-safe",
+      "brand_anchor": "bottom-left-safe",
+      "source": "user-followup"
+    },
+    {
+      "id": "V-B",
+      "orientation": "portrait",
+      "subtitle": "present",
+      "qr_anchor": "bottom-right-safe",
+      "slogan_anchor": "top-left-safe",
+      "brand_anchor": "bottom-left-safe",
+      "source": "user-followup"
+    }
+  ],
+  "checks": {
+    "blocking": [
+      "title-empty",
+      "title-over-preset-limit",
+      "subtitle-over-18",
+      "text-overflow",
+      "unsupported-orientation-profile",
+      "portrait-variant-conflict",
+      "component-collision",
+      "safe-boundary-overflow",
+      "missing-approved-production-assets",
+      "logo-under-profile-height",
+      "partner-height-out-of-range"
+    ],
+    "advisory": [
+      "candidate-values-not-approved",
+      "real-QR-not-encoded-or-scanned",
+      "unknown-aspect-needs-profile",
+      "M-text-rules-do-not-cover-S-L-XL"
+    ],
+    "generation_dirty_on": [
+      "canvas",
+      "template",
+      "visual",
+      "copy",
+      "brand-assets",
+      "QR-payload"
+    ],
+    "review_bound_to_generated_snapshot": true
+  },
+  "implementation": {
+    "current_site_updated": false,
+    "skill_created": false,
+    "this_package": "Unified data bundle; use runtime/components.mjs projections or the Python development loader.",
+    "not_a_drop_in_replacement": true,
+    "semantic_title_line_break": "rule-added;not-implemented-in-geometry-checker-or-current-site"
+  },
+  "copy_limits": {
+    "S": {
+      "title_max_graphemes": 10,
+      "subtitle_max_graphemes": 18,
+      "wrap_threshold": 8,
+      "wrap_threshold_applies_to": [
+        "subtitle"
+      ],
+      "subtitle_wrap": "character-threshold-and-actual-width",
+      "source": "user-copy-limits-2026-11-11",
+      "wrap_scope_status": "user-confirmed-subtitle-only",
+      "title_wrap": "ai-semantic-recommendation-user-adjustment;validate-actual-width",
+      "subtitle_max_lines": 3
+    },
+    "M": {
+      "title_max_graphemes": 12,
+      "subtitle_max_graphemes": 18,
+      "wrap_threshold": 10,
+      "wrap_threshold_applies_to": [
+        "subtitle"
+      ],
+      "subtitle_wrap": "character-threshold-and-actual-width",
+      "source": "user-copy-limits-2026-11-11",
+      "wrap_scope_status": "user-confirmed-subtitle-only",
+      "title_wrap": "ai-semantic-recommendation-user-adjustment;validate-actual-width",
+      "subtitle_max_lines": 2
+    },
+    "L": {
+      "title_max_graphemes": 14,
+      "subtitle_max_graphemes": 18,
+      "wrap_threshold": 12,
+      "wrap_threshold_applies_to": [
+        "subtitle"
+      ],
+      "subtitle_wrap": "character-threshold-and-actual-width",
+      "source": "user-copy-limits-2026-11-11",
+      "wrap_scope_status": "user-confirmed-subtitle-only",
+      "title_wrap": "ai-semantic-recommendation-user-adjustment;validate-actual-width",
+      "subtitle_max_lines": 2
+    }
+  },
+  "clarification": {
+    "wrap_threshold_scope": "subtitle-only-confirmed",
+    "question_pending": false,
+    "user_answer": "副标题",
+    "XL_copy_limit": "not-defined-by-this-update"
+  },
+  "components_ref": "./common.json",
+  "asset_bindings_ref": "../references/asset-bindings.json",
+  "derived_from": {
+    "version": "0.4.2",
+    "business_rules_changed": false
+  },
+  "title_line_break_policy_ref": "./common.json#/semanticTitleLineBreak",
+  "shared_component_dependency": {
+    "file": "rules/common.json",
+    "version": "1.0.0",
+    "sha256": "325490f174b7cf72f3221e00c56ee6b18945ff015706cf601c3b069f89863aae"
+  }
+}

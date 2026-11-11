@@ -1,0 +1,22 @@
+name: Check D-Design rules
+on:
+  push:
+    paths: ['packages/d-design-identification/**']
+  pull_request:
+    paths: ['packages/d-design-identification/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-d-design-rules:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/d-design-identification
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node development/check.mjs
+      - run: node --test development/tests/*.test.mjs

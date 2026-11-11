@@ -1,0 +1,13 @@
+{
+  "canvas": {
+    "width": 6000,
+    "height": 1000,
+    "unit": "px"
+  },
+  "preset": "M",
+  "structure": "brand-pillar",
+  "title": "杭州周末即刻出发",
+  "subtitle": "滴滴打车福利开启惬意旅程",
+  "qrEnabled": false,
+  "partners": []
+}

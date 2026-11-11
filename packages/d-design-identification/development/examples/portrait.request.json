@@ -1,0 +1,13 @@
+{
+  "canvas": {
+    "width": 1000,
+    "height": 6000,
+    "unit": "px"
+  },
+  "preset": "M",
+  "structure": "brand-pillar",
+  "title": "向美好即刻出发",
+  "subtitle": "滴滴打车福利开启惬意旅程",
+  "qrEnabled": false,
+  "partners": []
+}

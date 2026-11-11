@@ -1,0 +1,225 @@
+{
+  "id": "d-design-identification-bundle",
+  "version": "1.1.0",
+  "runtimeApiVersion": 2,
+  "date": "2026-11-11",
+  "status": "reorganized-candidate-rules-not-a-production-release",
+  "entrypoints": {
+    "common": "rules/common.json",
+    "regular": "rules/regular.json",
+    "extreme": "rules/extreme.json",
+    "assets": "references/asset-bindings.json",
+    "skill": "SKILL.md",
+    "runtime": "runtime/load-rules.mjs"
+  },
+  "moduleVersions": {
+    "common": "1.0.0",
+    "regular": "0.5.0",
+    "extreme": "1.0.1"
+  },
+  "originalPackagesUnchanged": true,
+  "actualBinaryAssetsIncluded": false,
+  "excludedFromIntegrity": [
+    "manifest.json",
+    "development/results/**",
+    "**/.DS_Store",
+    "**/__pycache__/**"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3927,
+      "sha256": "66ee56c0e0f51ee6fdeca8b6caabf34789939e5ca6358b2fa31eef051e9b3ac5"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 2472,
+      "sha256": "109eaefc7e5c391bf4946ec8030b0b26e4c58b6b630b5759ee7b6c0789126cee"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 332,
+      "sha256": "330cf6786eeddf2994347ca049dcf0c5bb51904021dcd31ab8d91ef028cd40db"
+    },
+    {
+      "path": "archive/README.md",
+      "bytes": 618,
+      "sha256": "45e8e7bfd01ebd5c29be47f6a9c644d2146bfc99833db35623116afbac708687"
+    },
+    {
+      "path": "archive/evidence/extreme/B4-11-landscape-brand-pillar.png",
+      "bytes": 755295,
+      "sha256": "6a5cf942bd420c5ccd87ef34becb485828af35dc6e1120b31adafba2aa8194eb"
+    },
+    {
+      "path": "archive/evidence/extreme/B4-2-portrait-ratios.png",
+      "bytes": 530788,
+      "sha256": "e36a35593bb565634d4d1e7181f5b3ac00ddd41be629d66e97f931773306171d"
+    },
+    {
+      "path": "archive/evidence/extreme/B4-4-portrait-brand-pillar.png",
+      "bytes": 1460166,
+      "sha256": "555d037f1541534dd4f81d0956d4fa5fd2c00378286a615669e63dca698d5e35"
+    },
+    {
+      "path": "archive/evidence/extreme/B4-8-landscape-ratios.png",
+      "bytes": 773816,
+      "sha256": "846b56ec65aabe7a87db045dad82d9465ef6e5b8c7753ea85dd94a0f129abb9b"
+    },
+    {
+      "path": "archive/evidence/extreme/joint-brand-one-partner.png",
+      "bytes": 151681,
+      "sha256": "71160fe1a041fa54b08796be0111f1f35f4d85cba2b032792a20f1f142bffdc0"
+    },
+    {
+      "path": "archive/evidence/extreme/joint-brand-two-partners.png",
+      "bytes": 168677,
+      "sha256": "fff5d7f63fc1f1e04e36a2da690ed9bcea69d4563accc22195ec3241616f97ec"
+    },
+    {
+      "path": "archive/evidence/regular/measurements-summary.csv",
+      "bytes": 1851,
+      "sha256": "0750eac2f82afc0e89ffc350e62a63e5bce09e1dc0a064b70238f6b91702e364"
+    },
+    {
+      "path": "archive/evidence/regular/psd-measurements.json",
+      "bytes": 193571,
+      "sha256": "90f5a6cfbc58ae00631b992b12030334046a5e2b7c1b482807faf6ff13444ee8"
+    },
+    {
+      "path": "archive/source-records.json",
+      "bytes": 10613,
+      "sha256": "ffff7e29c66460f9eb910688ab641f5f39094e5b3fde4410fc7f148bd8e7d624"
+    },
+    {
+      "path": "development/README.md",
+      "bytes": 1621,
+      "sha256": "d4dff68d91d7fa93340476fdde113b0ece83b5560e3f06b2a6ce748d54ba7365"
+    },
+    {
+      "path": "development/check.mjs",
+      "bytes": 6003,
+      "sha256": "f886253b8e58f170431df67027146d68343b1c1788c63f50ff7dc1a70f4307a2"
+    },
+    {
+      "path": "development/examples/landscape.request.json",
+      "bytes": 259,
+      "sha256": "1ab6ed9e8b6eb41e4cb98b2fe0272e8d2cd0348f9df3340d75257aafda952b40"
+    },
+    {
+      "path": "development/examples/portrait.request.json",
+      "bytes": 256,
+      "sha256": "0ea29c182e58056227058cc4d8b1cd484e6afb0b97d82eff596cbf43b362e001"
+    },
+    {
+      "path": "development/github/check-rules.yml",
+      "bytes": 568,
+      "sha256": "e70a2f106539d4516e81469fa7023f9775a18676ff0b836059943d2420b6bc5b"
+    },
+    {
+      "path": "development/integration/github-loader.mjs",
+      "bytes": 3456,
+      "sha256": "c83887867f1d888b57910dfe8c6a52eadab78f9e3ded6e7c152a3792b6058ced"
+    },
+    {
+      "path": "development/integration/project-adapter.mjs",
+      "bytes": 1452,
+      "sha256": "dbd3f4870bf64eaffb186755987268871e86bf1a112aade2e53f56b9b146deb5"
+    },
+    {
+      "path": "development/regular/check_rules.py",
+      "bytes": 19174,
+      "sha256": "e64a6bc7c9d500d12a884a22a81d23f43d281c9a40d3c695d04467bf385bf2bb"
+    },
+    {
+      "path": "development/regular/extract_psd.py",
+      "bytes": 10938,
+      "sha256": "acf5591a94b041496ee0d0628538e3e2b82bd515150abdc84ef1ee33c348e559"
+    },
+    {
+      "path": "development/regular/load_rules.py",
+      "bytes": 2410,
+      "sha256": "3249b5864673e80bf63f238988aa3a72ca2ffe1e401a28b1231a815091d818c4"
+    },
+    {
+      "path": "development/resolve.mjs",
+      "bytes": 654,
+      "sha256": "44945eb04f86c96816fdf6d7fcddb0ec2484a4ff3d891e48d9f7d40e1a9d0399"
+    },
+    {
+      "path": "development/schemas/extreme-identification.schema.json",
+      "bytes": 3476,
+      "sha256": "0f1cc77590ed4ebc910161ab09029c1c8657988270049d6ae2349c9fe4120852"
+    },
+    {
+      "path": "development/schemas/request.schema.json",
+      "bytes": 2200,
+      "sha256": "2403ff28cf54d05bfbb8d5c2f93d0ff0f683501e87d1cc6ffb4caf2a1d8615cf"
+    },
+    {
+      "path": "development/tests/extreme.test.mjs",
+      "bytes": 10887,
+      "sha256": "f9c469ddf96b21f891dceb051ae6e35bf0a63dbc726a2a85c646fab2c57b6b0f"
+    },
+    {
+      "path": "development/tests/integration.test.mjs",
+      "bytes": 4115,
+      "sha256": "0d2081e662175253d474a52fb9a5400a2a9e568bf1eb8925918a1bfc98060fad"
+    },
+    {
+      "path": "development/接入说明.md",
+      "bytes": 3177,
+      "sha256": "cbca98bf3e59b015de31e3ed471f87f1e70a56f259b9acd060a88c8f500ccab1"
+    },
+    {
+      "path": "docs/常规版式.md",
+      "bytes": 18699,
+      "sha256": "4d74c628696b5ca55dece322d0b12d89af762b905aaa3ebba3e2c7253dcf8755"
+    },
+    {
+      "path": "docs/来源与待确认.md",
+      "bytes": 4866,
+      "sha256": "d7848244a1d3f153075f44132fc606aa25ddf9d1b13f9817a81dccd20d74d1e7"
+    },
+    {
+      "path": "docs/极端尺寸.md",
+      "bytes": 8918,
+      "sha256": "17f56aed63f8e853d55628725c36441f42d6ba257e1de4b0441ab48379f1a0ff"
+    },
+    {
+      "path": "references/asset-bindings.json",
+      "bytes": 7148,
+      "sha256": "c6df1fa47c0efcec2f875210270b5eee5a1ab87f080ce5638a0ed3906e65c028"
+    },
+    {
+      "path": "rules/common.json",
+      "bytes": 4804,
+      "sha256": "325490f174b7cf72f3221e00c56ee6b18945ff015706cf601c3b069f89863aae"
+    },
+    {
+      "path": "rules/extreme.json",
+      "bytes": 11669,
+      "sha256": "aa14c20dac8cc0e187e6b9f0f229521a8a8ab3e72e0caffa63030f4e11377d50"
+    },
+    {
+      "path": "rules/regular.json",
+      "bytes": 11672,
+      "sha256": "4cb629e52a24a14336a66d44efe0e395cd95988837246bd1091ed6f52b2ccfc1"
+    },
+    {
+      "path": "runtime/components.mjs",
+      "bytes": 4266,
+      "sha256": "c0e7992cf1c464dd5f86b36f5dcc5f8f5591babcd4fec81b1414259ac30ed5aa"
+    },
+    {
+      "path": "runtime/extreme.mjs",
+      "bytes": 23040,
+      "sha256": "76bfc02e56570c6d01d53d17063d5ee1716872605460a9db36675e0d027cda01"
+    },
+    {
+      "path": "runtime/load-rules.mjs",
+      "bytes": 722,
+      "sha256": "9eb664619827c02a54a7efa4644a63e82d0cd6530dfe0050685098a847512f56"
+    }
+  ]
+}
