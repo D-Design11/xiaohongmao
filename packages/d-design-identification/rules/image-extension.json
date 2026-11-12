@@ -1,0 +1,188 @@
+{
+  "id": "d-design-image-region-extension",
+  "version": "0.2.0",
+  "updatedOn": "2026-11-12",
+  "status": "user-accepted-policy-with-prepared-demo-asset",
+  "contractOnly": false,
+  "scope": {
+    "module": "extreme-identification",
+    "canvasRatios": [
+      "6:1",
+      "1:6"
+    ],
+    "presets": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "target": "template.imageRegion",
+    "preserveTemplateGeometry": true
+  },
+  "requirementsSource": {
+    "userConfirmed": [
+      "preserve-subject-visibility",
+      "fill-entire-image-region",
+      "extend-background-in-missing-directions",
+      "test-before-site-deployment"
+    ],
+    "implementationProposal": [
+      "subject-protection-mask",
+      "reference-transform",
+      "protected-pixel-compositing",
+      "cached-derived-asset"
+    ],
+    "notPdfApprovedValues": true
+  },
+  "requiredInputs": [
+    "sourceAsset.id",
+    "sourceAsset.sha256",
+    "sourceAsset.pixelSize",
+    "template.imageRegion",
+    "output.pixelSize",
+    "subject.protectionMask",
+    "subject.approvedPlacement",
+    "embeddedText.policy",
+    "protectedElements"
+  ],
+  "coordinateContract": {
+    "sourceAnnotations": "normalized-source-coordinates-0-to-1",
+    "imageRegion": "template-design-units",
+    "workingCanvasAndMasks": "output-pixels",
+    "sourceToOutputTransform": "uniform-scale-and-translation",
+    "physicalUnitToPixels": "requires-separate-output-size-decision"
+  },
+  "subject": {
+    "scaleBasis": "user-approved-reference-composition",
+    "defaultHeightFraction": null,
+    "minimumSize": "from-approved-placement",
+    "preserveVisibleSourceParts": true,
+    "generateMissingBodyParts": false,
+    "autoShrinkToFitWholeSource": false,
+    "allowNonUniformScale": false,
+    "allowMirror": false,
+    "annotationApprovalRequired": true,
+    "conflictAction": "needs-user-choice-or-alternative-asset"
+  },
+  "decisionOrder": [
+    "derive-actual-image-region-from-template",
+    "require-approved-subject-and-key-element-protection",
+    "place-source-using-approved-subject-composition",
+    "if-coverage-complete-and-protected-elements-fit-use-background-crop-only",
+    "if-coverage-incomplete-extend-missing-background-with-subject-transform-locked",
+    "if-protected-elements-conflict-stop-and-request-choice",
+    "composite-protected-original-pixels",
+    "technical-checks-and-human-review",
+    "save-derived-asset-for-layout-preview"
+  ],
+  "extension": {
+    "operation": "background-outpaint",
+    "directions": "derive-from-source-placement-and-uncovered-image-region",
+    "editableMask": "uncovered-region-plus-approved-background-seam-band",
+    "maskIntersectsProtection": "reject",
+    "preserve": [
+      "light",
+      "palette",
+      "perspective",
+      "road-direction",
+      "material",
+      "depth-of-field"
+    ],
+    "forbidNew": [
+      "people",
+      "body-parts",
+      "vehicles",
+      "text",
+      "logos",
+      "dominant-unrequested-objects"
+    ],
+    "protectedCorePixels": "composite-from-original-after-approved-uniform-transform",
+    "providerSpecificOutputLimits": "must-be-verified-at-integration",
+    "failureAction": "needs-handling-no-silent-fallback"
+  },
+  "embeddedText": {
+    "defaultPolicy": "preserve-original",
+    "runtimePolicyChoices": [
+      "preserve-original",
+      "user-authorized-crop"
+    ],
+    "currentTestAssetPolicy": "per-asset-user-authorization",
+    "rewriteByModel": false,
+    "completeClippedStrokesByModel": false,
+    "separateEditableComponent": "requires-clean-or-layered-source-and-separate-approval"
+  },
+  "forbiddenFallbacks": [
+    "large-flat-color-placeholder-borders",
+    "transparent-gaps",
+    "blurred-edge-fill",
+    "mirrored-edge-fill",
+    "tiled-edge-fill",
+    "nonuniform-stretch",
+    "shrink-whole-image-until-subject-is-tiny",
+    "claim-extension-succeeded-without-generated-content"
+  ],
+  "validation": {
+    "technical": [
+      "exact-output-size",
+      "no-transparent-gaps",
+      "protected-regions-inside",
+      "uniform-subject-scale",
+      "protected-core-pixel-match",
+      "template-geometry-unchanged",
+      "preview-uses-reviewed-asset-version"
+    ],
+    "human": [
+      "reference-subject-size",
+      "natural-person-and-clothing",
+      "original-text-integrity",
+      "seam-and-light-continuity",
+      "no-repeated-subject-or-vehicle",
+      "overall-composition"
+    ],
+    "notPerformedIsPass": false,
+    "publishableAssetRequires": [
+      "all-technical-checks-pass",
+      "human-approval"
+    ],
+    "preparedDemoException": {
+      "scope": "only-user-accepted-catalog-assets",
+      "exactSourcePixelLockVerified": false,
+      "notProductionCertified": true,
+      "requiresRuntimeSourceHashAndRatioMatch": true
+    }
+  },
+  "stateMachine": [
+    "needs-annotation",
+    "needs-composition-confirmation",
+    "ready-to-test",
+    "extending",
+    "needs-review",
+    "approved",
+    "needs-handling"
+  ],
+  "cache": {
+    "keyIncludes": [
+      "source-sha256",
+      "image-region-aspect-and-output-size",
+      "approved-subject-placement",
+      "protection-mask-hash",
+      "embedded-text-policy",
+      "generation-settings",
+      "rule-version"
+    ],
+    "activityCopyOnlyChange": "reuse-approved-derived-background",
+    "sourceOrPlacementChange": "invalidate-derived-asset-and-review"
+  },
+  "deployment": {
+    "siteChangeAllowedNow": true,
+    "githubPublishAllowedNow": true,
+    "authorization": "user-approved-2026-11-12-deploy-site-and-update-github",
+    "automaticGenerativeExtensionConnected": false,
+    "approvedAssetUsage": "prepared-demo-background-by-source-hash-and-image-region-aspect",
+    "otherAssets": "needs-extension-or-user-confirmed-crop; no flat-color success fallback"
+  },
+  "runtimePolicyVersion": 1,
+  "defaultMode": "extension",
+  "forbidFlatColorSuccess": true,
+  "assetCatalogRef": "../references/approved-image-extensions.json"
+}

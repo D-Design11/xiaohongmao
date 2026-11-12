@@ -6,7 +6,7 @@ import { loadGithubBundle } from '../integration/github-loader.mjs';
 import { resolveProjectMaterial } from '../integration/project-adapter.mjs';
 const root = new URL('../../', import.meta.url);
 const commit = 'a'.repeat(40);
-const prefix = `https://raw.githubusercontent.com/D-Design11/didi-design-rules/${commit}/packages/d-design-identification/`;
+const prefix = `https://raw.githubusercontent.com/D-Design11/xiaohongmao/${commit}/packages/d-design-identification/`;
 const read = path => readFile(new URL(path, root));
 const hash = value => createHash('sha256').update(value).digest('hex');
 function fakeFetcher(changes = {}, visited = []) {
@@ -18,15 +18,15 @@ function fakeFetcher(changes = {}, visited = []) {
     return new Response(value, { status: 200 });
   };
 }
-test('GitHub loader verifies pinned five-file bundle with no real network calls', async () => {
+test('GitHub loader verifies pinned bundle including image-extension policy with no real network calls', async () => {
   const visited = [];
   const bundle = await loadGithubBundle(commit, { fetcher: fakeFetcher({}, visited) });
   assert.equal(bundle.rules.content.headline.maxGraphemes, 10);
   assert.equal(bundle.common.marginInBrandUnits, 1);
   assert.equal(bundle.provenance.commit, commit);
-  assert.equal(bundle.provenance.files.length, 5);
+  assert.equal(bundle.provenance.files.length, 7);
   assert.ok(bundle.skillText.includes('d-design-identification'));
-  assert.equal(visited.length, 6);
+  assert.equal(visited.length, 8);
 });
 test('loader rejects branch names and malformed repo before any fetch', async () => {
   const fetcher = async () => { assert.fail('must not fetch'); };

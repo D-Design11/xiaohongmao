@@ -69,10 +69,10 @@ try {
   checks.push('JSON syntax and local Markdown links');
   const entries = await Promise.all(paths.map(async path => { const bytes = await readFile(resolve(root, path)); return { path, bytes: bytes.byteLength, sha256: sha(bytes) }; }));
   if (refresh) await save('manifest.json', {
-    id: 'd-design-identification-bundle', version: '1.1.0', runtimeApiVersion: 2,
-    date: '2026-11-11', status: 'reorganized-candidate-rules-not-a-production-release',
-    entrypoints: { common: 'rules/common.json', regular: 'rules/regular.json', extreme: 'rules/extreme.json', assets: 'references/asset-bindings.json', skill: 'SKILL.md', runtime: 'runtime/load-rules.mjs' },
-    moduleVersions: { common: bundle.definitions.common.version, regular: bundle.regular.version, extreme: bundle.rules.version },
+    id: 'd-design-identification-bundle', version: '1.2.0', runtimeApiVersion: 2,
+    date: '2026-11-12', status: 'subject-first-image-extension-demo-not-production-certified',
+    entrypoints: { common: 'rules/common.json', regular: 'rules/regular.json', extreme: 'rules/extreme.json', assets: 'references/asset-bindings.json', skill: 'SKILL.md', imageExtension: 'rules/image-extension.json', approvedImageExtensions: 'references/approved-image-extensions.json', runtime: 'runtime/load-rules.mjs' },
+    moduleVersions: { common: bundle.definitions.common.version, regular: bundle.regular.version, extreme: bundle.rules.version, imageExtension: bundle.imageExtension.version, approvedImageExtensions: bundle.approvedImageExtensions.version },
     originalPackagesUnchanged: true, actualBinaryAssetsIncluded: false,
     excludedFromIntegrity: ['manifest.json', 'development/results/**', '**/.DS_Store', '**/__pycache__/**'],
     files: entries

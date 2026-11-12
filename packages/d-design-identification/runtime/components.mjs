@@ -74,11 +74,11 @@ export function materializeExtremeCommon(common, extreme, assets) {
   };
 }
 
-export function materializeBundle({ regular, extreme, common, assets, skillText = '', provenance = {} }) {
+export function materializeBundle({ regular, extreme, common, assets, imageExtension, approvedImageExtensions, skillText = '', provenance = {} }) {
   return {
-    definitions: { regular, extreme, common, assets },
+    definitions: { regular, extreme, common, assets, ...(imageExtension ? {imageExtension, approvedImageExtensions} : {}) },
     regular: materializeRegularRules(regular, common, assets),
     rules: clone(extreme), common: materializeExtremeCommon(common, extreme, assets),
-    assets, skillText, provenance
+    assets, imageExtension, approvedImageExtensions, skillText, provenance
   };
 }

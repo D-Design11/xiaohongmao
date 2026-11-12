@@ -1,0 +1,60 @@
+{
+  "id": "d-design-approved-image-extensions",
+  "version": "1.0.0",
+  "status": "user-approved-demo-assets-only",
+  "automaticGenerationConnected": false,
+  "assets": [
+    {
+      "id": "surprise.m.portrait.extended.v1",
+      "source": {
+        "assetId": "didi.kv.travel-surprise",
+        "file": "assets/visuals/travel-surprise.png",
+        "sha256": "f8845eecfe395acc7f2c3d4767d09ebdbfc272a24950f3a41b6f3495b66b64d0"
+      },
+      "target": {
+        "canvasAspect": [
+          1,
+          6
+        ],
+        "preset": "M",
+        "imageAspect": [
+          1,
+          3
+        ]
+      },
+      "file": "assets/visuals/extended/travel-surprise-m-portrait-v1.png",
+      "sha256": "d13f72b0d9e2e76148bcaf0f6b3c6eb424078c29515fae5c2b00b25eed9e502e",
+      "pixelSize": {
+        "width": 724,
+        "height": 2172
+      },
+      "approval": {
+        "status": "user-approved-demo",
+        "date": "2026-11-12",
+        "scope": "full-M-portrait-template-visual-test",
+        "sourcePixelLockVerified": false,
+        "productionCertified": false
+      },
+      "handwritingPolicy": "user-authorized-crop",
+      "templatePreview": {
+        "file": "assets/cases/surprise-m-portrait-template-v1.png",
+        "sha256": "629844db62d3a0448a2647b0adafc4a9d586eb018dbce82b67b174dd8cef0114",
+        "pixelSize": {
+          "width": 724,
+          "height": 4344
+        }
+      },
+      "publicBaseUrl": "https://city-studio-demo-didi-nov06.squaremug.chatgpt.site/"
+    }
+  ],
+  "authorizationBySourceSha256": {
+    "48ce6e9cbdf17e2d21a9013b098a93bc28445133b9604699156ea11f6f63092b": {
+      "priority": "person-first",
+      "handwriting": "user-authorized-crop"
+    },
+    "f8845eecfe395acc7f2c3d4767d09ebdbfc272a24950f3a41b6f3495b66b64d0": {
+      "priority": "person-first",
+      "handwriting": "user-authorized-crop"
+    }
+  }
+}

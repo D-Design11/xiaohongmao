@@ -1,21 +1,25 @@
 {
   "id": "d-design-identification-bundle",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "runtimeApiVersion": 2,
-  "date": "2026-11-11",
-  "status": "reorganized-candidate-rules-not-a-production-release",
+  "date": "2026-11-12",
+  "status": "subject-first-image-extension-demo-not-production-certified",
   "entrypoints": {
     "common": "rules/common.json",
     "regular": "rules/regular.json",
     "extreme": "rules/extreme.json",
     "assets": "references/asset-bindings.json",
     "skill": "SKILL.md",
+    "imageExtension": "rules/image-extension.json",
+    "approvedImageExtensions": "references/approved-image-extensions.json",
     "runtime": "runtime/load-rules.mjs"
   },
   "moduleVersions": {
     "common": "1.0.0",
     "regular": "0.5.0",
-    "extreme": "1.0.1"
+    "extreme": "1.0.2",
+    "imageExtension": "0.2.0",
+    "approvedImageExtensions": "1.0.0"
   },
   "originalPackagesUnchanged": true,
   "actualBinaryAssetsIncluded": false,
@@ -28,13 +32,13 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3927,
-      "sha256": "66ee56c0e0f51ee6fdeca8b6caabf34789939e5ca6358b2fa31eef051e9b3ac5"
+      "bytes": 4385,
+      "sha256": "e8107fec06f14aa2df0a8c0cad1906a10af46118164814dc844e961c8808614c"
     },
     {
       "path": "SKILL.md",
-      "bytes": 2472,
-      "sha256": "109eaefc7e5c391bf4946ec8030b0b26e4c58b6b630b5759ee7b6c0789126cee"
+      "bytes": 3026,
+      "sha256": "57a6e12043315e82016e9ff65042a7eea651603feafec23b17ee792b50712c24"
     },
     {
       "path": "agents/openai.yaml",
@@ -98,8 +102,8 @@
     },
     {
       "path": "development/check.mjs",
-      "bytes": 6003,
-      "sha256": "f886253b8e58f170431df67027146d68343b1c1788c63f50ff7dc1a70f4307a2"
+      "bytes": 6238,
+      "sha256": "8a759675ef69f57191a9d60e4495ee521859d214c7ee784fe2257a53a17c1078"
     },
     {
       "path": "development/examples/landscape.request.json",
@@ -118,8 +122,8 @@
     },
     {
       "path": "development/integration/github-loader.mjs",
-      "bytes": 3456,
-      "sha256": "c83887867f1d888b57910dfe8c6a52eadab78f9e3ded6e7c152a3792b6058ced"
+      "bytes": 3695,
+      "sha256": "50c2acbd34cb5ad08f5db4c3de96a37bd885e220d8abd6c4a7afb7649215750a"
     },
     {
       "path": "development/integration/project-adapter.mjs",
@@ -162,9 +166,14 @@
       "sha256": "f9c469ddf96b21f891dceb051ae6e35bf0a63dbc726a2a85c646fab2c57b6b0f"
     },
     {
+      "path": "development/tests/image-extension.test.mjs",
+      "bytes": 1378,
+      "sha256": "70e82006baaf9173c12f245ca9c92cc3328c229412686b459f4f36510abbd0f7"
+    },
+    {
       "path": "development/tests/integration.test.mjs",
-      "bytes": 4115,
-      "sha256": "0d2081e662175253d474a52fb9a5400a2a9e568bf1eb8925918a1bfc98060fad"
+      "bytes": 4132,
+      "sha256": "91788f3f8521c6c051d97c3ef0eb151c171460821a3e86b6a79500eb65777225"
     },
     {
       "path": "development/接入说明.md",
@@ -187,6 +196,16 @@
       "sha256": "17f56aed63f8e853d55628725c36441f42d6ba257e1de4b0441ab48379f1a0ff"
     },
     {
+      "path": "docs/画面延展.md",
+      "bytes": 3043,
+      "sha256": "60967300d7b2bf24973f0ef0e12981b844d69ed6a082f7324e41498feea2fc7d"
+    },
+    {
+      "path": "references/approved-image-extensions.json",
+      "bytes": 1854,
+      "sha256": "937c5d922d2ff4d236a644675b1889a1c4c12809473798f786e09e4cde61d930"
+    },
+    {
       "path": "references/asset-bindings.json",
       "bytes": 7148,
       "sha256": "c6df1fa47c0efcec2f875210270b5eee5a1ab87f080ce5638a0ed3906e65c028"
@@ -198,8 +217,13 @@
     },
     {
       "path": "rules/extreme.json",
-      "bytes": 11669,
-      "sha256": "aa14c20dac8cc0e187e6b9f0f229521a8a8ab3e72e0caffa63030f4e11377d50"
+      "bytes": 12106,
+      "sha256": "d84c5f510f0dd697c6063a7241489f1b4ae9952304276eee033fd4e74163483d"
+    },
+    {
+      "path": "rules/image-extension.json",
+      "bytes": 5901,
+      "sha256": "4b6d2d148126e3bf90ce41b94c39a535e6ac39e317b8c9912e075e41d86b5028"
     },
     {
       "path": "rules/regular.json",
@@ -208,8 +232,8 @@
     },
     {
       "path": "runtime/components.mjs",
-      "bytes": 4266,
-      "sha256": "c0e7992cf1c464dd5f86b36f5dcc5f8f5591babcd4fec81b1414259ac30ed5aa"
+      "bytes": 4418,
+      "sha256": "29ced9e2e936d12efdf107f48fbaa1bb6ed4553cc1ce6073ecce207c08ae7eab"
     },
     {
       "path": "runtime/extreme.mjs",
@@ -217,9 +241,14 @@
       "sha256": "76bfc02e56570c6d01d53d17063d5ee1716872605460a9db36675e0d027cda01"
     },
     {
+      "path": "runtime/image-extension.mjs",
+      "bytes": 2178,
+      "sha256": "a170e4f1aad7a89ddf7ae092c2e28dc8b76fb281a7e6dafee9cc2e4196efdb38"
+    },
+    {
       "path": "runtime/load-rules.mjs",
-      "bytes": 722,
-      "sha256": "9eb664619827c02a54a7efa4644a63e82d0cd6530dfe0050685098a847512f56"
+      "bytes": 921,
+      "sha256": "e1459dacf1b90c82439b9754d351bf46caf7adf842d2dc53b5c1195773863f74"
     }
   ]
 }

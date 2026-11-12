@@ -9,7 +9,9 @@ export async function loadBundle(root = new URL('../', import.meta.url)) {
     json('rules/regular.json'), json('rules/extreme.json'), json('rules/common.json'),
     json('references/asset-bindings.json')
   ]);
-  const bundle = materializeBundle({ regular, extreme, common, assets });
+  const imageExtension = await json('rules/image-extension.json');
+  const approvedImageExtensions = await json('references/approved-image-extensions.json');
+  const bundle = materializeBundle({ regular, extreme, common, assets, imageExtension, approvedImageExtensions });
   assertRules(bundle.rules, bundle.common);
   return bundle;
 }
